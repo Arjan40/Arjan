@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pappu Samose Waley - Kanpur's Famous Samosa Since 1984</title>
+  <meta name="description" content="Authentic Kanpur street food - famous samosas, sandwiches, rolls and sweets since 1984 on Birhana Road">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --primary-color: #f39c12;
+      --secondary-color: #e67e22;
+      --dark-color: #1a1a1a;
+      --light-color: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                  url('https://img.freepik.com/free-photo/gradient-blue-abstract-background-smooth-dark-blue-with-black-vignette-studio_1258-53634.jpg?semt=ais_hybrid&w=740') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--light-color);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.9);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      padding: 10px 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      padding: 5px 0;
+      background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    .navbar-brand img {
+      height: 60px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled .navbar-brand img {
+      height: 50px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      margin: 30px auto;
+      max-width: 900px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(243, 156, 18, 0.1) 0%, transparent 70%);
+      z-index: -1;
+      animation: pulse 8s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title {
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      border-radius: 3px;
+    }
+
+    .menu-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu-item {
+      padding: 15px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-item:hover {
+      background-color: rgba(243, 156, 18, 0.1);
+      transform: translateX(5px);
+    }
+
+    .menu-item-name {
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+
+    .menu-item-price {
+      background-color: rgba(243, 156, 18, 0.2);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .gallery {
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .footer {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 30px 0;
+      text-align: center;
+      margin-top: 60px;
+      border-top: 1px solid rgba(243, 156, 18, 0.2);
+    }
+
+    .footer-logo {
+      height: 120px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
+      margin: 20px 0;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: var(--light-color);
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: 450px;
+      border: none;
+      margin-top: 20px;
+    }
+
+    .btn-warning {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      color: var(--dark-color);
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3);
+    }
+
+    .btn-warning:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(243, 156, 18, 0.4);
+    }
+
+    .btn-warning:active {
+      transform: translateY(1px);
+    }
+
+    .contact-info {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .contact-info i {
+      color: var(--primary-color);
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary-color);
+      color: var(--dark-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    .testimonials {
+      margin-top: 50px;
+    }
+
+    .testimonial-card {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .rating {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .timing {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .timing h3 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .timing-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://media-hosting.imagekit.io/c7c89b93284e40c4/Pappu%20samosey.png?Expires=1841179052&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=TZVBvBs9cM5P49EAyPa3WBJGyOtYSR1I2uVQPUvXdvx4hPRqz0iL8R06hKs-dmPQI6HCr~yI46Uyg8xQXhe~FLgWij6Yb0vHygIA0cqUTc5X96S6Re9E~25dNTeJe2NLmqyp7MlEvoReXgL~bM-8KD6f1OGJpyE0OtklQ9GMLi0yjGKDNBgy2YJsu1q4As0~NabOnm62LXrd3hS72QhWB7btcnb1puk3fe1FWybhEWwGcB8RV6lXIo1ywiG2IF~E9UY8gasvNvuyC2hdO3DbI6Gy1hbvC-Ql0VN1Co43Vz6PjhfGjQYpHb8s5qdhQOM~9bqybt20xWEuQZo6p0gG7w__" 
+             alt="Pappu Samose Waley Logo" class="img-fluid" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#menu">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Welcome to Pappu Samose Waley</h1>
+      <p class="lead">Serving Kanpur's most delicious samosas since 1984 on Birhana Road</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#menu" class="btn btn-warning btn-lg scroll-to-menu">
+          <i class="fas fa-utensils me-2"></i>Explore Menu
+        </a>
+        <a href="https://wa.me/918005383347" target="_blank" class="btn btn-outline-warning btn-lg">
+          <i class="fab fa-whatsapp me-2"></i>Order Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container py-5">
+    <section id="about">
+      <h2 class="section-title">About Us</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <p class="lead">
+            Pappu Samose Waley is a legendary street food vendor known for mouthwatering samosas that have become an integral part of Kanpur's culinary identity.
+          </p>
+          <p>
+            Since 1984, we have been serving the Kanpur community with love, passion, and authentic flavors. What started as a small stall on Birhana Road has now become a must-visit destination for food lovers across the city.
+          </p>
+          <p>
+            Our secret lies in the perfect blend of spices, high-quality ingredients, and traditional cooking methods passed down through generations. Each samosa is crafted with care, ensuring that every bite takes you on a flavorful journey.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <div class="timing">
+            <h3><i class="fas fa-clock me-2"></i>Opening Hours</h3>
+            <div class="timing-item">
+              <span>Monday - Saturday</span>
+              <span>9:00 AM - 10:00 PM</span>
+            </div>
+            <div class="timing-item">
+              <span>Sunday</span>
+              <span>10:00 AM - 9:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="mt-5">
+      <h2 class="section-title">Our Menu</h2>
+      <p class="lead mb-4">Explore our wide variety of delicious samosas and other street food favorites</p>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-warning mt-4"><i class="fas fa-pepper-hot me-2"></i>Samosas</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <span class="menu-item-name">Masala Samosa</span>
+              <span class="menu-item-price">₹10.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Choley & Khaste</span>
+              <span class="menu-item-price">₹15.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Paneer Samosa</span>
+              <span class="menu-item-price">₹15.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Cheese Corn Samosa</span>
+              <span class="menu-item-price">₹15.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Chole Samosa</span>
+              <span class="menu-item-price">₹15.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Pizza Samosa</span>
+              <span class="menu-item-price">₹20.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Italian Samosa</span>
+              <span class="menu-item-price">₹15.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Noodles Samosa</span>
+              <span class="menu-item-price">₹15.00</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h3 class="text-warning mt-4"><i class="fas fa-pepper-hot me-2"></i>More Samosas</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <span class="menu-item-name">Veg Puff Samosa</span>
+              <span class="menu-item-price">₹15.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Punjabi Paneer Samosa</span>
+              <span class="menu-item-price">₹20.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Tandoori Paneer Samosa</span>
+              <span class="menu-item-price">₹20.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Malai Paneer Samosa</span>
+              <span class="menu-item-price">₹20.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Chocolate Samosa</span>
+              <span class="menu-item-price">₹20.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Khoya Samosa</span>
+              <span class="menu-item-price">₹15.00</span>
+            </li>
+          </ul>
+          
+          <h3 class="text-warning mt-4"><i class="fas fa-star me-2"></i>Signature Dishes</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <span class="menu-item-name">Pizza Cheese Samosa</span>
+              <span class="menu-item-price">₹25.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Chocolate Samosa</span>
+              <span class="menu-item-price">₹20.00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3 class="text-warning mt-4"><i class="fas fa-ice-cream me-2"></i>Sweets</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <span class="menu-item-name">Gulab Jamuns (2 pieces)</span>
+              <span class="menu-item-price">₹15.00</span>
+            </li>
+          </ul>
+          
+          <h3 class="text-warning mt-4"><i class="fas fa-hamburger me-2"></i>Sandwiches</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <span class="menu-item-name">Cheese Corn Cream Sandwich</span>
+              <span class="menu-item-price">₹50.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Pizza Cheese Sandwich</span>
+              <span class="menu-item-price">₹50.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Paneer Tikka Masala Sandwich</span>
+              <span class="menu-item-price">₹60.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Pasta Cheese Sandwich</span>
+              <span class="menu-item-price">₹50.00</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h3 class="text-warning mt-4"><i class="fas fa-bread-slice me-2"></i>Rolls</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <span class="menu-item-name">Cheese Roll (95% Cheesy)</span>
+              <span class="menu-item-price">₹40.00</span>
+            </li>
+            <li class="menu-item">
+              <span class="menu-item-name">Jahi Kabab Rolls</span>
+              <span class="menu-item-price">₹40.00</span>
+            </li>
+          </ul>
+          
+          <div class="mt-4 p-4 bg-dark rounded text-center">
+            <h4 class="text-warning">Special Combo Offers</h4>
+            <p>2 Samosas + 1 Gulab Jamun = ₹30 only</p>
+            <p>1 Sandwich + 1 Samosa = ₹70 only</p>
+            <a href="https://wa.me/918005383347" target="_blank" class="btn btn-sm btn-warning mt-2">
+              <i class="fab fa-whatsapp me-1"></i>Ask About Today's Special
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="mt-5">
+      <h2 class="section-title">Gallery</h2>
+      <p class="lead mb-4">Take a look at our delicious offerings</p>
+      
+      <div class="row gallery">
+        <div class="col-md-4 mb-4">
+          <img src="https://source.unsplash.com/random/600x400/?samosa,indian" alt="Traditional Samosa" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="https://source.unsplash.com/random/600x400/?samosa,streetfood" alt="Street Food Samosa" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="https://source.unsplash.com/random/600x400/?samosa,spicy" alt="Spicy Samosa" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="https://source.unsplash.com/random/600x400/?samosa,chutney" alt="Samosa with Chutney" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="https://source.unsplash.com/random/600x400/?indian,sandwich" alt="Indian Sandwich" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="https://source.unsplash.com/random/600x400/?gulab,jamun" alt="Gulab Jamun" class="img-fluid">
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials mt-5">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="lead mb-4">Hear from our satisfied customers</p>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"The best samosas in Kanpur! I've been coming here since my college days and the taste is still the same after 20 years. The masala samosa is my all-time favorite."</p>
+            <p class="testimonial-author">- Rajesh Verma</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Pappu's pizza samosa is a game-changer! Never thought this combination would work so well. Must try for all food lovers visiting Kanpur."</p>
+            <p class="testimonial-author">- Priya Singh</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="testimonial-text">"Their cheese rolls are to die for! So cheesy and flavorful. Perfect evening snack with friends. The service is quick and the staff is very friendly."</p>
+            <p class="testimonial-author">- Amit Kumar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mt-5">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="lead mb-4">We'd love to hear from you</p>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="contact-info">
+            <h3 class="text-warning mb-4">Get in Touch</h3>
+            <p><i class="fas fa-phone-alt"></i> Phone: <a href="tel:8181077525">8181077525</a></p>
+            <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/918005383347" target="_blank">80053 83347</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Address: 28/90, Birhana Rd, Naughara, General Ganj, Kanpur, Uttar Pradesh 208001</p>
+            <p><i class="fas fa-clock"></i> Open: Monday-Saturday 9AM-10PM, Sunday 10AM-9PM</p>
+            <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/pappusamosewaley" target="_blank">@pappusamosewaley</a></p>
+            
+            <div class="mt-4">
+              <a href="https://wa.me/918005383347" target="_blank" class="btn btn-warning me-2">
+                <i class="fab fa-whatsapp me-1"></i>Chat on WhatsApp
+              </a>
+              <a href="tel:8181077525" class="btn btn-outline-warning">
+                <i class="fas fa-phone me-1"></i>Call Now
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.7487449243263!2d80.35288197527879!3d26.463826776917653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c4750b3b4b607%3A0x87158642262c3a2b!2sPappu%20Samose%20Waley!5e0!3m2!1sen!2sin!4v1746571779565!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <img src="https://media-hosting.imagekit.io/c7c89b93284e40c4/Pappu%20samosey.png?Expires=1841179052&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=TZVBvBs9cM5P49EAyPa3WBJGyOtYSR1I2uVQPUvXdvx4hPRqz0iL8R06hKs-dmPQI6HCr~yI46Uyg8xQXhe~FLgWij6Yb0vHygIA0cqUTc5X96S6Re9E~25dNTeJe2NLmqyp7MlEvoReXgL~bM-8KD6f1OGJpyE0OtklQ9GMLi0yjGKDNBgy2YJsu1q4As0~NabOnm62LXrd3hS72QhWB7btcnb1puk3fe1FWybhEWwGcB8RV6lXIo1ywiG2IF~E9UY8gasvNvuyC2hdO3DbI6Gy1hbvC-Ql0VN1Co43Vz6PjhfGjQYpHb8s5qdhQOM~9bqybt20xWEuQZo6p0gG7w__" 
+           alt="Pappu Samose Waley Logo" class="footer-logo img-fluid">
+      <div class="social-icons">
+        <a href="https://www.instagram.com/pappusamosewaley" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/918005383347" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p class="copyright">© 2023 Pappu Samose Waley. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('active');
+      } else {
+        backToTopButton.classList.remove('active');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Animation on scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.menu-item, .gallery img, .testimonial-card');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        
+        if (elementPosition < screenPosition) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    
+    // Set initial state for animation
+    document.querySelectorAll('.menu-item, .gallery img, .testimonial-card').forEach(element => {
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(20px)';
+      element.style.transition = 'all 0.5s ease';
+    });
+    
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
+</body>
+</html>
